@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Video Background with Scramble Text</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="px-6 py-6 bg-[#131313]">
+    <div class="scroll-content">
+      <div class="relative w-full h-screen">
+        <video
+          id="video-background"
+          class="absolute top-0 left-0 w-full md:h-[95%] h-full object-cover rounded-3xl"
+          autoplay
+          loop
+          muted
+        ></video>
+
+        <div
+          class="scramble-text text-white text-[1.565rem] flex justify-center py-4 z-[70] inverted-border"
+        >
+          <span id="scramble-text"></span>
+        </div>
+
+        <!-- Description -->
+        <div
+          class="text-white z-10 flex flex-col items-center justify-center h-full bg-[#131313] bg-opacity-55 gap-y-4"
+        >
+          <div
+            class="flex items-center justify-start md:mr-[15.25rem] mr-[3.25rem] gap-x-3"
+          >
+            <div
+              class="bg-white md:w-[5.439rem] sm:w-[3.439rem] w-[2.5rem] h-[0.126rem] line-animation opacity-0"
+            ></div>
+            <p
+              class="sm:text-xl text-nowrap md:text-[1.6rem] font-bold wonderful-text opacity-0"
+            >
+              Wonderful Indonesia
+            </p>
+          </div>
+          <h1
+            id="video-title"
+            class="md:text-5xl neue sm:text-3xl text-2xl text-nowrap font-extralight pantai-text opacity-0"
+          ></h1>
+        </div>
+
+        <div
+          class="absolute neue text-white bottom-16 left-4 px-3 py-[0.625rem] bg-opacity-20 md:h-[5.5rem] h-[3.5rem] rounded-2xl backdrop-blur-sm"
+        >
+          <h1
+            class="flex items-center text-base md:text-xl font-semibold gap-x-2"
+          >
+            WONDERFUL OF INDONESIA
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z"
+              />
+            </svg>
+          </h1>
+          <p
+            id="video-description"
+            class="text-[0.625rem] font-normal md:w-[19.625rem] w-[15rem]"
+          ></p>
+        </div>
+      </div>
+      <div class="pt-36 text-white">
+        <div class="flex justify-between items-center">
+          <div class="font-bold text-[3.13rem] w-[33%]">
+            <h1 class="text-white"><span class="bg-[#B57442] mr-1">ANOTHER</span><span class="bg-white text-black">HEAVEN</span> IN INDONESIA</h1>
+          </div>
+          <div class="font-normal radio text-2xl text-white w-[30%]">
+            Tourist Destinations With The Beauty Of Heaven That Only Exists In
+            Indonesia
+            <hr class="w-[50%] border-[#B57442] stretch border-[2px] mt-6" />
+          </div>
+        </div>
+        <div class="flex justify-between relative">
+          <div
+            class="w-[29rem] h-[18.813rem] mt-16 relative rounded-2xl overflow-hidden"
+          >
+            <video
+              id="main-video"
+              class="w-full h-full object-cover rounded-2xl"
+              controls
+            ></video>
+            <div
+              class="absolute bottom-[-2.5rem] right-[-2.5rem] w-[16.3rem] h-[9.2rem] rounded-2xl shadow-lg"
+            >
+              <video
+                id="small-video"
+                class="w-full h-full object-cover rounded-2xl"
+                controls
+              ></video>
+            </div>
+          </div>
+          <div class="w-[45%] flex flex-col justify-center">
+            <h1
+              id="video-title-carousel"
+              class="text-white text-2xl font-bold"
+            ></h1>
+            <p
+              id="video-description-carousel"
+              class="text-white text-lg font-light py-4"
+            ></p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-end items-center gap-5">
+          <div
+            id="prev-btn"
+            class="w-[5.25rem] h-[5.25rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
+          >
+            <svg
+              width="19"
+              height="34"
+              viewBox="0 0 19 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 2L2 17L17 32"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div
+            id="next-btn"
+            class="w-[5.25rem] h-[5.25rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
+          >
+            <svg
+              width="19"
+              height="34"
+              viewBox="0 0 19 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 32L17 17L2 2"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
