@@ -13,12 +13,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.scroll-content {
-  position: relative;
-  will-change: transform;
-  /* Optimalkan rendering */
-}
-
 .wonderful-text {
   font-family: 'PP Neue Montreal';
 }

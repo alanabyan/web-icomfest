@@ -115,26 +115,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Pastikan GSAP dan ScrollSmoother sudah tersedia
 document.addEventListener("DOMContentLoaded", () => {
+  // Register plugin ScrollSmoother
   gsap.registerPlugin(ScrollSmoother);
 
-  // Membuat scroll smoother
-  let smoother = ScrollSmoother.create({
-    smooth: 1.5, // Kecepatan smooth scroll
-    normalizeScroll: true, // Normalisasi scroll untuk semua perangkat
-    effects: true, // Aktifkan efek pada elemen tertentu
-  });
-
-  // Opsional: Tambahkan animasi untuk elemen tertentu
-  document.querySelectorAll(".wonderful-text, .pantai-text").forEach((el) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 50,
-      duration: 1.5,
-      delay: 0.3,
-      onStart: () => el.classList.remove("opacity-0"), // Hapus opacity-0 di Tailwind
-    });
+  // Create ScrollSmoother for the entire page
+  ScrollSmoother.create({
+    wrapper: "#smooth-wrapper", // Wrapper untuk seluruh halaman
+    content: "#smooth-content", // Konten utama halaman
+    smooth: 5.5,               // Kecepatan smoothing (semakin tinggi, semakin lambat)
+    normalizeScroll: true,     // Normalisasi scroll untuk semua perangkat
+    effects: true,             // Aktifkan efek parallax global
   });
 });
+
 
   document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
