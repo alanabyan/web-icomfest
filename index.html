@@ -12,7 +12,8 @@
   </head>
   <body class="px-6 py-6 bg-[#131313]" id="smooth-wrapper">
     <div class="scroll-content" id="smooth-content">
-      <div class="relative w-full h-screen">
+      <!-- Start Hero -->
+      <section class="relative w-full h-screen">
         <video
           id="video-background"
           class="absolute top-0 left-0 w-full md:h-[95%] h-full object-cover rounded-3xl"
@@ -73,51 +74,59 @@
             class="text-[0.625rem] font-normal md:w-[19.625rem] w-[15rem]"
           ></p>
         </div>
-      </div>
-      <div class="pt-36 text-white">
+      </section>
+      <!-- End Hero -->
+      <!-- Start Destination -->
+      <div class="pt-36 text-white relative">
         <div class="flex justify-between items-center">
           <div class="font-bold text-[3.13rem] w-[33%]">
-            <h1 class="text-white"><span class="bg-[#B57442] mr-1">ANOTHER</span><span class="bg-white text-black">HEAVEN</span> IN INDONESIA</h1>
+            <h1 class="text-white">
+              <span class="bg-[#B57442] mr-1">ANOTHER</span
+              ><span class="bg-white text-black">HEAVEN</span> IN INDONESIA
+            </h1>
           </div>
-          <div class="font-normal radio text-2xl text-white w-[30%]">
+          <div class="font-normal radio text-2xl text-white w-[30%] mx-16">
             Tourist Destinations With The Beauty Of Heaven That Only Exists In
             Indonesia
             <hr class="w-[50%] border-[#B57442] stretch border-[2px] mt-6" />
           </div>
         </div>
         <div class="flex justify-between relative">
-          <div
-            class="w-[29rem] h-[18.813rem] mt-16 relative rounded-2xl overflow-hidden"
-          >
+          <div class="w-[29rem] h-[18.813rem] mt-16 relative rounded-2xl">
             <video
               id="main-video"
               class="w-full h-full object-cover rounded-2xl"
               controls
             ></video>
             <div
-              class="absolute bottom-[-2.5rem] right-[-2.5rem] w-[16.3rem] h-[9.2rem] rounded-2xl shadow-lg"
+              id="small-map"
+              class="absolute bottom-[-2.5rem] right-[-2.5rem] w-[16.3rem] h-[9.2rem] rounded-2xl shadow-lg overflow-hidden"
             >
-              <video
-                id="small-video"
-                class="w-full h-full object-cover rounded-2xl"
-                controls
-              ></video>
+              <!-- Google Maps will be loaded here dynamically -->
             </div>
           </div>
-          <div class="w-[45%] flex flex-col justify-center">
-            <h1
-              id="video-title-carousel"
-              class="text-white text-2xl font-bold"
-            ></h1>
+          <div
+            class="flex absolute bottom-[-35px] left-[48%] justify-center items-center mt-6 gap-2"
+          >
+            <div id="indicator-container" class="flex gap-3"></div>
+          </div>
+          <div class="w-full max-w-[605px] flex flex-col justify-center neue">
             <p
               id="video-description-carousel"
-              class="text-white text-lg font-light py-4"
+              class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
             ></p>
+            <div class="mt-10 flex items-center gap-x-3">
+              <hr class="w-[15%] border-[1.5px]" />
+              <p
+                id="video-title-carousel"
+                class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
+              ></p>
+            </div>
           </div>
         </div>
 
         <!-- Navigation -->
-        <div class="flex justify-end items-center gap-5">
+        <div class="flex justify-end mr-10 items-center gap-5">
           <div
             id="prev-btn"
             class="w-[5.25rem] h-[5.25rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
@@ -160,6 +169,7 @@
           </div>
         </div>
       </div>
+      <!-- End Destination -->
     </div>
     <script src="script.js"></script>
   </body>

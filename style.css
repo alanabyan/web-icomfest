@@ -17,6 +17,20 @@ html {
   font-family: 'PP Neue Montreal';
 }
 
+.indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+}
+
 
 .inverted-border {
   position: absolute;
