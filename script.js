@@ -19,26 +19,7 @@ const videos = [
   }
 ];
 
-const destination = [
-  {
-    video: "public/videos/video1.mp4",
-    title: "Pantai Kuta, Bali, Indonesia",
-    description: "Kuta Beach is one of Bali’s most iconic tourist destinations, renowned for its soft white sand, perfect waves for surfing, and stunning sunsets. Located just minutes from Ngurah Rai Airport, Kuta is a haven for travelers seeking a complete tropical experience.",
-    scrambleText: "Wonderful Indonesia"
-  },
-  {
-    video: "public/videos/video2.mp4",
-    title: "Danau Toba, Sumatera Utara",
-    description: "Salah satu danau vulkanik terbesar di dunia.",
-    scrambleText: "A Natural Beauty"
-  },
-  {
-    video: "public/videos/video3.mp4",
-    title: "Candi Borobudur, Jawa Tengah",
-    description: "Salah satu keajaiban dunia yang penuh sejarah.",
-    scrambleText: "Cultural Heritage"
-  }
-];
+const destination = [...videos]
 
 const timeless = [
   {
@@ -63,12 +44,12 @@ const timeless = [
   },
 ]
 
-  const carouselData = [
-    { title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
-    { title: "Keris", imgSrc: "public/keris.svg" },
-    { title: "Batik", imgSrc: "public/batik.svg" },
-    { title: "Gamelan", imgSrc: "public/gamelan.png" }
-  ];
+const carouselData = [
+  { id: 1, link: "wayang", title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
+  { id: 2, link: "wayang", title: "Keris", imgSrc: "public/keris.svg" },
+  { id: 3, link: "wayang", title: "Batik", imgSrc: "public/batik.svg" },
+  { id: 4, link: "wayang", title: "Gamelan", imgSrc: "public/gamelan.png" }
+];
 
 const footerData = [
   {
@@ -109,16 +90,13 @@ const nextBtn = document.getElementById("next-btn");
 const prevBtnLegacy = document.getElementById("prev-btn-legacy");
 const nextBtnLegacy = document.getElementById("next-btn-legacy");
 
-// Inisialisasi GSAP ScrollTrigger
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Tambahkan jarak awal pada #content
   document.querySelector("#content").style.paddingTop = "50vh";
   document.querySelector("#content").style.paddingBottom = "50vh";
 
   timeless.forEach((item, index) => {
-    // Buat elemen kartu (card)
     const card = document.createElement("div");
     card.classList.add(
       "flex",
@@ -133,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "scale-0.95" // Awal lebih kecil
     );
 
-    // Layout bergantian
     if (index % 2 !== 0) {
       card.classList.add("flex-row-reverse");
     }
@@ -147,6 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <source src="${item.video}" type="video/mp4">
         </video>
       </div>
+      <div class="flex flex-col items-center gap-2">
+          <div class="w-[36px] h-[36px] bg-[#B57442] rounded-full flex justify-center items-center text-sm text-white font-bold"></div>
+          <hr class="h-[249px] w-[3px] bg-white" />
+        </div>
       <div class="flex flex-col gap-[4px] relative -top-5">
         <h1 class="text-xl font-bold">${item.title}</h1>
         <hr class="w-[177px] border-[#B57442] border-[1.5px]" />
@@ -254,6 +235,7 @@ function updateCarousel() {
   visibleSlides.forEach((item) => {
     const card = document.createElement("div");
     card.classList.add("flex", "flex-col", "items-center", "gap-y-3", "poppins", "shadow-lg", "w-[303px]", "h-[193px]", "bg-transparent");
+    card.setAttribute("data-link", item.link);
     card.innerHTML = `
       <div class="relative w-full h-full group">
         <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full rounded-[10px] object-cover" />
@@ -266,6 +248,14 @@ function updateCarousel() {
         <div class="text-center text-white text-xl font-light mt-[12px]">${item.title}</div>
       </div>
     `;
+
+    card.addEventListener("click", () => {
+      const link = card.getAttribute("data-link");
+
+      window.location.href = `/detailProduct/${link}.html`;
+    })
+
+
     carousel.appendChild(card);
 
   });
