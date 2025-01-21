@@ -40,18 +40,54 @@ const destination = [
   }
 ];
 
-const mapLinks = [
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63098.133649589945!2d115.13033313606121!3d-8.726321728682041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd246bc2ab70d43%3A0x82feaae12f4ab48e!2sPantai%20Kuta!5e0!3m2!1sid!2sid!4v1736946653072!5m2!1sid!2sid",
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934.500590623474!2d99.0781766!3d2.5780881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30316531afad2557%3A0x5f677a35dd5c0d03!2sDanau%20Toba!5e0!3m2!1sen!2sid!4v1700000000001!5m2!1sen!2sid",
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15869.26015088934!2d105.8837856!3d-6.08819205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4186aeccb6c0f1%3A0x1f555b24c077b26f!2sPantai%20Anyer!5e0!3m2!1sid!2sid!4v1736945516634!5m2!1sid!2sid"
-];
+const timeless = [
+  {
+    video: "public/videos/video1.mp4",
+    title: "TARI KECAK",
+    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+  },
+  {
+    video: "public/videos/video1.mp4",
+    title: "TARI KECAK",
+    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+  },
+  {
+    video: "public/videos/video1.mp4",
+    title: "TARI KECAK",
+    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+  },
+  {
+    video: "public/videos/video1.mp4",
+    title: "TARI KECAK",
+    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+  },
+]
 
-const carouselData = [
-  { title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
-  { title: "Keris", imgSrc: "public/keris.svg" },
-  { title: "Batik", imgSrc: "public/batik.svg" },
-  { title: "Gamelan", imgSrc: "public/gamelan.png" }
-];
+  const carouselData = [
+    { title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
+    { title: "Keris", imgSrc: "public/keris.svg" },
+    { title: "Batik", imgSrc: "public/batik.svg" },
+    { title: "Gamelan", imgSrc: "public/gamelan.png" }
+  ];
+
+const footerData = [
+  {
+    title: "OUR TEAMS",
+    icon: "public/icons/top-right-arrow-footer.svg"
+  },
+  {
+    title: "INSTAGRAM",
+    icon: "public/icons/top-right-arrow-footer.svg"
+  },
+  {
+    title: "LINKEDIN",
+    icon: "public/icons/top-right-arrow-footer.svg"
+  },
+  {
+    title: "YOUTUBE",
+    icon: "public/icons/top-right-arrow-footer.svg"
+  },
+]
 
 let currentIndex = 0;
 const randomVideo = videos[Math.floor(Math.random() * videos.length)];
@@ -61,31 +97,179 @@ document.getElementById("video-title").textContent = randomVideo.title;
 document.getElementById("video-description").textContent = randomVideo.description;
 
 const carousel = document.getElementById("carousel");
+const footerList = document.getElementById("footer")
 const mainVideo = document.getElementById("main-video");
 const smallVideo = document.getElementById("small-video");
 const indicatorContainer = document.getElementById("indicator-container");
 const videoTitle = document.getElementById("video-title-carousel");
 const videoDescription = document.getElementById("video-description-carousel");
+const content = document.getElementById("content");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const prevBtnLegacy = document.getElementById("prev-btn-legacy");
 const nextBtnLegacy = document.getElementById("next-btn-legacy");
 
-const visibleSlides = [
-  carouselData[currentIndex % carouselData.length],
-  carouselData[(currentIndex + 1) % carouselData.length],
-  carouselData[(currentIndex + 2) % carouselData.length]
-];
+// Inisialisasi GSAP ScrollTrigger
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-visibleSlides.forEach((item) => {
-  const card = document.createElement("div");
-  card.classList.add("flex", "flex-col", "items-center", "gap-y-3", "poppins", "shadow-lg", "w-[303px]", "h-[193px]", "bg-transparent");
-  card.innerHTML = `
-    <img src="${item.imgSrc}" alt="${item.title}" class="w-full rounded-[10px] object-cover" />
-    <div class="text-center text-white text-xl font-light">${item.title}</div>
-  `;
-  carousel.appendChild(card);
+  // Tambahkan jarak awal pada #content
+  document.querySelector("#content").style.paddingTop = "50vh";
+  document.querySelector("#content").style.paddingBottom = "50vh";
+
+  timeless.forEach((item, index) => {
+    // Buat elemen kartu (card)
+    const card = document.createElement("div");
+    card.classList.add(
+      "flex",
+      "items-center",
+      "gap-4",
+      "rounded-[20px]",
+      "p-4",
+      "bg-[#131313]",
+      "text-white",
+      "opacity-0", // Awal transparan
+      "translate-y-10", // Awal lebih rendah
+      "scale-0.95" // Awal lebih kecil
+    );
+
+    // Layout bergantian
+    if (index % 2 !== 0) {
+      card.classList.add("flex-row-reverse");
+    }
+
+    card.innerHTML = `
+      <div class="w-[459px] h-[284px] rounded-lg overflow-hidden">
+        <video
+          class="w-full h-full object-cover"
+          controls
+        >
+          <source src="${item.video}" type="video/mp4">
+        </video>
+      </div>
+      <div class="flex flex-col gap-[4px] relative -top-5">
+        <h1 class="text-xl font-bold">${item.title}</h1>
+        <hr class="w-[177px] border-[#B57442] border-[1.5px]" />
+        <p class="text-white font-normal text-base text-justify tracking-wider max-w-[453px] w-full mt-[19px]">${item.description}</p>
+      </div>
+    `;
+
+    document.querySelector("#content").appendChild(card);
+
+    // Timeline untuk animasi kartu
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: card,
+        start: "top center",
+        end: "top -20%",
+        scrub: true,
+        pin: index === timeless.length - 1, // Pin kartu terakhir
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Animasi kartu biasa
+    timeline
+      .fromTo(
+        card,
+        { opacity: 0, y: 100, scale: 0.95 },
+        { opacity: 1, y: 200, scale: 1, delay: 1.5, duration: 1.2, ease: "power4.out" }
+      )
+      .to(card, {
+        opacity: 0,
+        y: -100,
+        duration: 1.2,
+        ease: "power4.in",
+      });
+
+    // Animasi zoom-out untuk kartu terakhir
+    if (index === timeless.length - 1) {
+      timeline
+        .to(card, {
+          scale: 1.2,
+          opacity: 0,
+          duration: 1.5,
+          ease: "power4.inOut",
+        })
+        .to(card, { display: "none" }); // Sembunyikan kartu terakhir
+    }
+
+    // Kontrol video
+    ScrollTrigger.create({
+      trigger: card,
+      start: "top center",
+      end: "top -20%",
+      onEnter: () => card.querySelector("video").play(),
+      onLeave: () => card.querySelector("video").pause(),
+      onLeaveBack: () => card.querySelector("video").pause(),
+    });
+  });
+
+  // Transisi ke section lain
+  const lastSection = document.querySelector("section.relative");
+  ScrollTrigger.create({
+    trigger: "#content",
+    start: "bottom center", // Mulai transisi saat kartu terakhir hampir selesai
+    onEnter: () => {
+      gsap.to(window, {
+        scrollTo: lastSection, // Pindahkan viewport ke section berikutnya
+        duration: 1.5,
+        ease: "power4.out",
+      });
+    },
+  });
 });
+
+footerData.forEach((item) => {
+  const card = document.createElement("div");
+  card.classList.add("flex", "flex-col", "gap-y-[6px]", "w-full", "group", "px-[90px]");
+  card.innerHTML = `
+    <div class="flex justify-between items-center w-full">
+      <p class="text-[#A5A5A5] font-bold text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
+      <img
+        src="${item.icon}"
+        alt="icon"
+        class="w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
+      />
+    </div>
+    <hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
+  `;
+  footerList.appendChild(card);
+});
+
+
+// Ambil elemen "timeless" sebagai array data
+
+
+function updateCarousel() {
+  carousel.innerHTML = "";
+
+
+  const visibleSlides = [
+    carouselData[currentIndex % carouselData.length],
+    carouselData[(currentIndex + 1) % carouselData.length],
+    carouselData[(currentIndex + 2) % carouselData.length]
+  ];
+
+  visibleSlides.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("flex", "flex-col", "items-center", "gap-y-3", "poppins", "shadow-lg", "w-[303px]", "h-[193px]", "bg-transparent");
+    card.innerHTML = `
+      <div class="relative w-full h-full group">
+        <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full rounded-[10px] object-cover" />
+        <div class="absolute gap-x-[20px] inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-[10px] opacity-0 group-hover:opacity-90 transition-opacity">
+          <span class="text-white text-[50px] leading-[60px] neue font-bold uppercase">
+            ${item.title.length > 7 ? item.title.substring(0, 7) : item.title}
+          </span>
+          <img src="public/icons/top-right-arrow.svg" alt="arrow" class="mb-2 w-[16px]" />
+        </div>
+        <div class="text-center text-white text-xl font-light mt-[12px]">${item.title}</div>
+      </div>
+    `;
+    carousel.appendChild(card);
+
+  });
+}
 
 function createIndicators() {
   indicatorContainer.innerHTML = "";
@@ -114,12 +298,14 @@ function updateVideos() {
 }
 
 prevBtnLegacy.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + carouselData.length) % carouselData.length;
+  currentIndex = (currentIndex - 1 + carouselData.length) % carouselData.length; // Pindah ke slide sebelumnya
+  updateCarousel();
   updateIndicators();
 });
 
 nextBtnLegacy.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % carouselData.length;
+  currentIndex = (currentIndex + 1) % carouselData.length; // Pindah ke slide berikutnya
+  updateCarousel();
   updateIndicators();
 });
 
@@ -135,35 +321,32 @@ nextBtn.addEventListener("click", () => {
   // updateIndicators();
 });
 
+updateCarousel();
 createIndicators();
 updateIndicators();
 updateVideos();
 
-const scrambleText = (text, duration = 2) => {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let scrambledArray = text.split("").map((char) => (char.trim() ? chars[Math.floor(Math.random() * chars.length)] : char));
-  let scrambledText = scrambledArray.join("");
-  document.getElementById("scramble-text").textContent = scrambledText;
-  const steps = 10;
-  const interval = duration / steps;
-  let counter = 0;
+const animateText = (text) => {
+  const textElement = document.getElementById("scramble-text");
+  textElement.textContent = ""; // Pastikan elemen kosong sebelum memulai animasi
 
-  const intervalId = setInterval(() => {
-    scrambledArray = scrambledArray.map((char) => (char.trim() ? chars[Math.floor(Math.random() * chars.length)] : char));
-    scrambledText = scrambledArray.join("");
-    document.getElementById("scramble-text").textContent = scrambledText;
-    counter++;
+  // Buat elemen span untuk setiap karakter teks
+  text.split("").forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char === " " ? "\u00A0" : char; // Gunakan non-breaking space untuk spasi
+    textElement.appendChild(span);
+  });
 
-    if (counter >= steps) {
-      clearInterval(intervalId);
-      setTimeout(() => {
-        document.getElementById("scramble-text").textContent = text;
-      }, 300);
-    }
-  }, interval * 1000);
+  // Animasi fade-in karakter dengan GSAP
+  gsap.fromTo(
+    "#scramble-text span",
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, stagger: 0.05, duration: 1 }
+  );
 };
 
-scrambleText(randomVideo.scrambleText, 2);
+// Jalankan animasi dengan teks dari randomVideo
+animateText(randomVideo.scrambleText);
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.fromTo(
@@ -219,21 +402,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.fromTo(
     ".nusantara-locomotion",
-    { x: "100%", opacity: 0 },
+    { x: "100%", opacity: 0 }, // Mulai dari luar layar (kanan)
     {
-      x: "0%",
+      x: "0%", // Kembali ke posisi default
       opacity: 1,
-      duration: 1.5,
+      duration: 5,
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".nusantara-locomotion",
-        start: "+=500 center",
-        end: "+=500 top",
+        start: "+=500 center", // Animasi dimulai saat elemen terlihat di viewport
+        end: "+=500 top", // Berhenti di tengah viewport
         scrub: true,
-        markers: true
-      }
+        markers: true,
+      },
     }
-  )
+  );
 
   gsap.fromTo(
     ".stretch",

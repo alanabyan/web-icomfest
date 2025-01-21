@@ -8,11 +8,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-[#131313]" id="smooth-wrapper">
+  <body class="bg-[#131313] relative" id="smooth-wrapper">
     <div class="scroll-content" id="smooth-content">
       <div class="px-[26px] py-[26px]">
         <!-- Start Hero -->
@@ -26,7 +29,7 @@
           ></video>
 
           <div
-            class="scramble-text text-white text-[1.565rem] flex justify-center py-4 z-[70] inverted-border"
+            class="text-white text-[1.565rem] flex justify-center py-4 z-[70] inverted-border"
           >
             <span id="scramble-text"></span>
           </div>
@@ -35,22 +38,22 @@
           <div
             class="text-white z-10 flex flex-col items-center justify-center h-full bg-[#131313] bg-opacity-55 gap-y-4"
           >
-            <div
-              class="flex items-center justify-start md:mr-[15.25rem] mr-[3.25rem] gap-x-3"
-            >
-              <div
-                class="bg-white md:w-[5.439rem] sm:w-[3.439rem] w-[2.5rem] h-[0.126rem] line-animation opacity-0"
-              ></div>
-              <p
-                class="sm:text-xl text-nowrap md:text-[1.6rem] font-bold wonderful-text opacity-0"
-              >
-                Wonderful Indonesia
-              </p>
+            <div class="flex flex-col items-start gap-y-2">
+              <div class="flex items-center justify-start gap-x-3">
+                <div
+                  class="bg-white md:w-[5.439rem] sm:w-[3.439rem] w-[2.5rem] h-[0.126rem] line-animation opacity-0"
+                ></div>
+                <p
+                  class="sm:text-xl uppercase text-nowrap md:text-[1.6rem] font-bold wonderful-text opacity-0"
+                >
+                  Wonderful Indonesia
+                </p>
+              </div>
+              <h1
+                id="video-title"
+                class="md:text-5xl uppercase neue sm:text-3xl text-2xl text-nowrap font-extralight pantai-text opacity-0"
+              ></h1>
             </div>
-            <h1
-              id="video-title"
-              class="md:text-5xl neue sm:text-3xl text-2xl text-nowrap font-extralight pantai-text opacity-0"
-            ></h1>
           </div>
 
           <div
@@ -88,13 +91,47 @@
                 ><span class="bg-white text-black">HEAVEN</span> IN INDONESIA
               </h1>
             </div>
-            <div class="w-[31.313rem] h-[20.329rem] mt-16 relative rounded-2xl">
-              <video
-                id="main-video"
-                class="w-full h-full object-cover rounded-2xl"
-                controls
-              ></video>
+            <!-- Ganti video di section lainnya -->
+            <div
+              class="relative w-[31.313rem] h-[20.329rem] mt-[47px] rounded-2xl"
+            >
+              <div class="video-container relative w-full h-full">
+                <video
+                  id="main-video"
+                  class="w-full h-full object-cover rounded-2xl"
+                  controls
+                ></video>
+              </div>
             </div>
+            <!-- <div
+              id="video-modal"
+              class="hidden absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+            >
+              <div class="relative w-full max-w-3xl h-auto p-4">
+                <button
+                  id="close-modal"
+                  class="absolute top-4 right-4 text-white rounded-full p-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                    />
+                  </svg>
+                </button>
+                <video
+                  id="modal-video"
+                  class="w-full rounded-2xl"
+                  autoplay
+                  loop
+                ></video>
+              </div>
+            </div> -->
           </div>
           <div class="flex flex-col items-start relative">
             <div class="font-normal radio text-2xl text-white w-[70%]">
@@ -103,7 +140,7 @@
               <hr class="w-[50%] border-[#B57442] stretch border-[2px] mt-6" />
             </div>
             <div
-              class="w-full max-w-[605px] flex flex-col justify-center mt-[59px] neue"
+              class="w-full max-w-[605px] flex flex-col justify-center mt-[89px] neue"
             >
               <p
                 id="video-description-carousel"
@@ -175,7 +212,7 @@
             <p class="poppins font-light text-xl text-[#B57442]">
               Expressions of Local Art and Culture
             </p>
-            <div class="flex items-center gap-x-[21px]">
+            <div class="flex items-center mr-36 gap-x-[21px]">
               <div
                 id="prev-btn-legacy"
                 class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
@@ -219,7 +256,10 @@
             </div>
           </div>
         </div>
-        <div id="carousel" class="flex mt-[23px] justify-start gap-x-[120px]"></div>
+        <div
+          id="carousel"
+          class="flex mt-[23px] justify-start gap-x-[120px]"
+        ></div>
         <div
           id="indicator-container"
           class="flex absolute bottom-[-7rem] left-[49%] gap-x-2"
@@ -241,8 +281,45 @@
       <!-- Locomotion Start -->
       <section class="mt-[751px] relative h-screen">
         <div class="flex flex-col font-bold text-[90px]">
-          <div class="bg-white w-[110%] absolute -left-6 h-[138.62px] wonderful-locomotion rotate-[8.38deg] radio flex justify-center items-center overflow-hidden text-nowrap">NUSANTARA NUSANTARA NUSANTARA</div>
-          <div class="bg-white w-[120%] h-[138.62px] rotate-[-25deg] nusantara-locomotion absolute left-[-11rem] overflow-hidden radio flex justify-center items-center font-bold text-[90px] radio text-nowrap">WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA</div>
+          <div
+            class="bg-white w-[110%] absolute -left-6 h-[138.62px] wonderful-locomotion rotate-[8.38deg] radio flex justify-center items-center overflow-hidden text-nowrap"
+          >
+            NUSANTARA NUSANTARA NUSANTARA
+          </div>
+          <div
+            class="bg-white w-[110%] h-[138.62px] rotate-[-25deg] nusantara-locomotion overflow-hidden radio flex justify-center items-center font-bold text-[90px] radio text-nowrap"
+          >
+            WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA
+          </div>
+        </div>
+      </section>
+      <!-- Locomotion End -->
+      <!-- Timeless Start -->
+      <section
+        class="text-white neue flex flex-col justify-center items-center px-[130px]"
+      >
+        <div class="text-center font-bold text-[42px] max-w-[671px] w-full">
+          <h1>TIMELESS MOVEMENTS OF THE ARCHIPELAGO</h1>
+        </div>
+        <div class="gap-8 flex flex-col mt-[69px]" id="content"></div>
+      </section>
+      <!-- Timeless End -->
+      <!-- Quotes Start -->
+      <section class="relative w-full px-6 mt-[446px] py-10">
+        <div class="bg-white rounded-[40px] p-6">
+          <div class="flex flex-col items-start justify-center">
+            <div class="flex gap-x-[24px] items-center mb-6">
+              <img
+                src="public/icons/nevtik.svg"
+                alt="Nevtik Logo"
+                class="w-[58px]"
+              />
+              <img src="public/text-box.svg" alt="" />
+            </div>
+            <div id="footer" class="flex flex-col gap-y-[16px] w-full">
+              <!-- Items will be appended here by JavaScript -->
+            </div>
+          </div>
         </div>
       </section>
     </div>
