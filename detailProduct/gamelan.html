@@ -1,71 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gamelan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <style>
-      .sticky-container {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-black w-full min-h-screen py-10 sm:px-8 lg:px-12 overflow-x-hidden flex flex-col justify-center"
-  >
-    <!-- Back Button -->
-    <button class="mb-8" onclick="handleClick()">
-      <img src="../public/icons/button-back.svg" alt="Back" class="w-12" />
-    </button>
-    <div class="flex flex-col lg:flex-row justify-center w-full">
-      <img
-        src="../public/gamelan.png"
-        alt="Megamendung"
-        class="max-w-[80%] object-cover ml-8"
-      />
-      <div class="px-4 py-4">
-        <h1 class="text-white text-3xl font-bold flex flex-col">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamelan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    .sticky-container {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body class="bg-black w-full h-screen py-10 px-12 overflow-x-hidden">
+  <!-- Back Button -->
+  <button class="mb-8" onclick="handleClick()">
+    <img src="../public/icons/button-back.svg" alt="Back" class="w-12" />
+  </button>
+  <div class="grid grid-cols-2 mt-[87px]">
+    <!-- Sticky Image -->
+    <div class="sticky-container">
+      <div class="relative">
+        <img src="../public/gamelan.png" alt="" class="max-w-[480px] w-full h-[353px]" />
+        <div class="absolute inset-0 bg-black bg-opacity-15"></div>
+        <h1 class="absolute text-white bottom-8 poppins font-bold text-4xl left-5">
           GAMELAN
-          <span class="mt-12 text-xl font-normal"
-            >Gamelan is a traditional Indonesian musical ensemble consisting of
-            various instruments such as gongs, kenong, saron, bonang, and
-            kendang. Gamelan is typically played in groups, producing
-            distinctive harmonies and rich melodies. This ensemble is commonly
-            found in different regions of Indonesia, especially in Java, Bali,
-            and Sunda. It is often used in traditional ceremonies, dances,
-            wayang performances (shadow puppetry), and other cultural events,
-            reflecting the deep cultural heritage of Indonesia.</span
-          >
         </h1>
       </div>
     </div>
-
-    <section class="relative w-full px-4 sm:px-6 lg:px-8 mt-[106px] py-10">
-      <div class="bg-white rounded-[20px] lg:rounded-[40px] p-4 sm:p-6">
-        <div class="flex flex-col items-start justify-center">
-          <div class="flex gap-x-4 items-center mb-6">
-            <img
-              src="../public/icons/nevtik.svg"
-              alt="Nevtik Logo"
-              class="w-12 sm:w-[58px]"
-            />
-            <img
-              src="../public/text-box.svg"
-              alt="Text Box"
-              class="w-24 sm:w-auto"
-            />
-          </div>
-          <div id="footer" class="flex flex-col gap-y-4 w-full">
-            <!-- Items will be appended here by JavaScript -->
-          </div>
+    <div id="content" class="flex flex-col"></div>
+    <!-- Scrollable Content -->
+  </div>
+  <section class="relative w-full px-6 mt-[106px] py-10">
+    <div class="bg-white rounded-[40px] p-6">
+      <div class="flex flex-col items-start justify-center">
+        <div class="flex gap-x-[24px] items-center mb-6">
+          <img src="../public/icons/nevtik.svg" alt="Nevtik Logo" class="w-[58px]" />
+          <img src="../public/text-box.svg" alt="" />
+        </div>
+        <div id="footer" class="flex flex-col gap-y-[16px] w-full">
+          <!-- Items will be appended here by JavaScript -->
         </div>
       </div>
-    </section>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+  <script>
+
+    function handleClick() {
+      window.location.href = "/index.html"
+    }
+    const footerData = [
+      {
+        title: "OUR TEAMS",
+        icon: "../public/icons/top-right-arrow-footer.svg",
+      },
+      {
+        title: "INSTAGRAM",
+        icon: "../public/icons/top-right-arrow-footer.svg",
+      },
+      {
+        title: "LINKEDIN",
+        icon: "../public/icons/top-right-arrow-footer.svg",
+      },
+      {
+        title: "YOUTUBE",
+        icon: "../public/icons/top-right-arrow-footer.svg",
+      },
+    ];
+
+    const footerList = document.getElementById("footer");
+
+    footerData.forEach((item) => {
+      const card = document.createElement("div");
+      card.classList.add(
+        "flex",
+        "flex-col",
+        "gap-y-[6px]",
+        "w-full",
+        "group",
+        "px-[90px]"
+      );
+      card.innerHTML = `
+    <div class="flex justify-between items-center w-full">
+        <p class="text-[#A5A5A5] font-bold text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
+        <img
+            src="${item.icon}"
+            alt="icon"
+            class="w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
+        />
+    </div>
+    <hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
+    `;
+      footerList.appendChild(card);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Data untuk konten scroll
+      const timeless = [
+        {
+          title: "Pengertian",
+          description:
+            "Gamelan is a traditional Indonesian musical ensemble consisting of various instruments such as gongs, kenong, saron, bonang, and kendang.Gamelan is typically played in groups, producing distinctive harmonies and rich melodies.This ensemble is commonly found in different regions of Indonesia, especially in Java, Bali, and Sunda.It is often used in traditional ceremonies, dances, wayang performances(shadow puppetry), and other cultural events, reflecting the deep cultural heritage of Indonesia.",
+        },
+        {
+          title: "Sejarah",
+          description:
+            'Gamelan, a traditional ensemble music from Indonesia, has a history that dates back to the Hindu-Buddhist period in the 8th century. It is believed to have originated in the courts of Java and Bali, with its intricate melodies and rhythms reflecting a blend of spiritual, ceremonial, and artistic traditions. The term "gamelan" derives from the Javanese word "gamel," meaning to strike, as the instruments are primarily percussion-based, including gongs, metallophones, and drums. Gamelan played a vital role in rituals, theater, and dance performances, such as wayang kulit and traditional dances. Over time, regional styles emerged, with Javanese gamelan emphasizing meditative qualities and Balinese gamelan showcasing dynamic and vibrant rhythms. Recognized as a symbol of Indonesian cultural heritage, gamelan remains an integral part of traditional ceremonies and contemporary arts.',
+        },
+      ];
+
+      timeless.forEach((item, index) => {
+        // Membuat elemen card
+        const card = document.createElement("div");
+        card.classList.add("flex", "flex-col");
+
+        card.innerHTML = `
+            div class="flex flex-col">
+    <h1 class="text-[#B57442] poppins font-bold text-4xl">${item.title}</h1>
+    <p class="font-normal text-xl neue text-white text-justify">
+       ${item.description}
+    </p>
+</div>
+`;
+
+        document.querySelector("#content").appendChild(card);
+
+        // Animasi menggunakan GSAP
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top center",
+            end: "top -20%",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        timeline
+          .fromTo(
+            card,
+            { opacity: 0, y: 100, scale: 0.95 },
+            { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power4.out" }
+          )
+          .to(card, {
+            opacity: 0,
+            y: -100,
+            duration: 1.2,
+            ease: "power4.in",
+          });
+      });
+
+      // Transisi ke section lain
+      const lastSection = document.querySelector("section.relative");
+      ScrollTrigger.create({
+        trigger: "#content",
+        start: "bottom center",
+        onEnter: () => {
+          gsap.to(window, {
+            scrollTo: lastSection,
+            duration: 1.5,
+            ease: "power4.out",
+          });
+        },
+      });
+    });
+  </script>
+</body>
+
 </html>

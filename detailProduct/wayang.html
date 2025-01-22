@@ -15,54 +15,160 @@
       }
     </style>
   </head>
-  <body
-    class="bg-black w-full min-h-screen py-10 sm:px-8 lg:px-12 overflow-x-hidden flex flex-col justify-center"
-  >
+  <body class="bg-black w-full h-screen py-10 px-12 overflow-x-hidden">
     <!-- Back Button -->
     <button class="mb-8" onclick="handleClick()">
       <img src="../public/icons/button-back.svg" alt="Back" class="w-12" />
     </button>
-    <div class="flex flex-col lg:flex-row justify-center w-full">
-      <img
-        src="../public/wayang.svg"
-        alt="Megamendung"
-        class="max-w-[80%] object-cover ml-8"
-      />
-      <div class="px-4 py-4">
-        <h1 class="text-white text-3xl font-bold flex flex-col">
-          Wayang
-          <span class="mt-12 text-xl font-normal"
-            >Wayang is a traditional Indonesian performing art that uses puppets
-            or shadows to convey stories. Wayang has deep cultural roots in
-            Indonesia, especially in Java and Bali, and is often used to narrate
-            epic tales like the Mahabharata and Ramayana, as well as local
-            folklore.</span
-          >
-        </h1>
+    <div class="grid grid-cols-2 mt-[87px]">
+      <!-- Sticky Image -->
+      <div class="sticky-container">
+        <div class="relative">
+          <img src="../public/wayang.svg" alt="" class="max-w-[480px] w-full h-[353px]" />
+          <div class="absolute inset-0 bg-black bg-opacity-15"></div>
+          <h1 class="absolute text-white bottom-8 poppins font-bold text-4xl left-5">
+            WAYANG
+          </h1>
+        </div>
       </div>
+      <div id="content" class="flex flex-col"></div>
+      <!-- Scrollable Content -->
     </div>
-
-    <section class="relative w-full px-4 sm:px-6 lg:px-8 mt-[106px] py-10">
-      <div class="bg-white rounded-[20px] lg:rounded-[40px] p-4 sm:p-6">
+    <section class="relative w-full px-6 mt-[106px] py-10">
+      <div class="bg-white rounded-[40px] p-6">
         <div class="flex flex-col items-start justify-center">
-          <div class="flex gap-x-4 items-center mb-6">
-            <img
-              src="../public/icons/nevtik.svg"
-              alt="Nevtik Logo"
-              class="w-12 sm:w-[58px]"
-            />
-            <img
-              src="../public/text-box.svg"
-              alt="Text Box"
-              class="w-24 sm:w-auto"
-            />
+          <div class="flex gap-x-[24px] items-center mb-6">
+            <img src="../public/icons/nevtik.svg" alt="Nevtik Logo" class="w-[58px]" />
+            <img src="../public/text-box.svg" alt="" />
           </div>
-          <div id="footer" class="flex flex-col gap-y-4 w-full">
+          <div id="footer" class="flex flex-col gap-y-[16px] w-full">
             <!-- Items will be appended here by JavaScript -->
           </div>
         </div>
       </div>
     </section>
-    <script src="script.js"></script>
+    <script>
+      
+        function handleClick() {
+          window.location.href = "/index.html"
+        }
+        const footerData = [
+          {
+            title: "OUR TEAMS",
+            icon: "../public/icons/top-right-arrow-footer.svg",
+          },
+          {
+            title: "INSTAGRAM",
+            icon: "../public/icons/top-right-arrow-footer.svg",
+          },
+          {
+            title: "LINKEDIN",
+            icon: "../public/icons/top-right-arrow-footer.svg",
+          },
+          {
+            title: "YOUTUBE",
+            icon: "../public/icons/top-right-arrow-footer.svg",
+          },
+        ];
+
+        const footerList = document.getElementById("footer");
+
+        footerData.forEach((item) => {
+          const card = document.createElement("div");
+          card.classList.add(
+            "flex",
+            "flex-col",
+            "gap-y-[6px]",
+            "w-full",
+            "group",
+            "px-[90px]"
+          );
+          card.innerHTML = `
+    <div class="flex justify-between items-center w-full">
+        <p class="text-[#A5A5A5] font-bold text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
+        <img
+            src="${item.icon}"
+            alt="icon"
+            class="w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
+        />
+    </div>
+    <hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
+    `;
+          footerList.appendChild(card);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+          gsap.registerPlugin(ScrollTrigger);
+
+          // Data untuk konten scroll
+          const timeless = [
+            {
+              title: "Pengertian",
+              description:
+                "Wayang is a traditional Indonesian performing art that uses puppets or shadows to convey stories.Wayang has deep cultural roots in Indonesia, especially in Java and Bali, and is often used to narrateepic tales like the Mahabharata and Ramayana, as well as localfolklore.",
+            },
+            {
+              title: "Sejarah",
+              description:
+                "Wayang, a traditional Indonesian shadow puppet theater, has a rich history deeply rooted in the nation's culture. Originating from ancient animistic rituals, it evolved significantly under Hindu-Buddhist influence, incorporating epics like Ramayana and Mahabharata. During the Islamic era, figures like Sunan Kalijaga adapted wayang for religious teachings, blending local traditions with Islamic values. Over time, it became a medium for storytelling, moral lessons, and cultural expression, flourishing in various forms such as wayang kulit and wayang golek. Recognized by UNESCO as a Masterpiece of Oral and Intangible Heritage in 2003, wayang remains a vital symbol of Indonesia's cultural identity.",
+            },
+          ];
+
+          timeless.forEach((item, index) => {
+            // Membuat elemen card
+            const card = document.createElement("div");
+            card.classList.add("flex", "flex-col");
+
+            card.innerHTML = `
+            div class="flex flex-col">
+    <h1 class="text-[#B57442] poppins font-bold text-4xl">${item.title}</h1>
+    <p class="font-normal text-xl neue text-white text-justify">
+       ${item.description}
+    </p>
+</div>
+`;
+
+            document.querySelector("#content").appendChild(card);
+
+            // Animasi menggunakan GSAP
+            const timeline = gsap.timeline({
+              scrollTrigger: {
+                trigger: card,
+                start: "top center",
+                end: "top -20%",
+                scrub: true,
+                toggleActions: "play none none reverse",
+              },
+            });
+
+            timeline
+              .fromTo(
+                card,
+                { opacity: 0, y: 100, scale: 0.95 },
+                { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power4.out" }
+              )
+              .to(card, {
+                opacity: 0,
+                y: -100,
+                duration: 1.2,
+                ease: "power4.in",
+              });
+          });
+
+          // Transisi ke section lain
+          const lastSection = document.querySelector("section.relative");
+          ScrollTrigger.create({
+            trigger: "#content",
+            start: "bottom center",
+            onEnter: () => {
+              gsap.to(window, {
+                scrollTo: lastSection,
+                duration: 1.5,
+                ease: "power4.out",
+              });
+            },
+          });
+        });
+    </script>
   </body>
 </html>

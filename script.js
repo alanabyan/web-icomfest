@@ -3,19 +3,19 @@ const videos = [
     video: "public/videos/video1.mp4",
     title: "Pantai Kuta, Bali, Indonesia",
     description: "Pantai Kuta terletak di Pulau Bali, terkenal karena lautan yang bagus indah asri dan dikenal sebagai surga dunia",
-    scrambleText: "Wonderful Indonesia"
+    scrambleText: "Pantai Kuta"
   },
   {
     video: "public/videos/video2.mp4",
     title: "Danau Toba, Sumatera Utara",
     description: "Salah satu danau vulkanik terbesar di dunia.",
-    scrambleText: "Wonderful Indonesia"
+    scrambleText: "Danau Toba"
   },
   {
     video: "public/videos/video3.mp4",
     title: "Gunung Bromo, Jawa Timur",
     description: "Salah satu pegunungan terindah di Indonesia.",
-    scrambleText: "Cultural Heritage"
+    scrambleText: "Gunung Bromo"
   }
 ];
 
@@ -49,10 +49,10 @@ const timeless = [
 ];
 
 const carouselData = [
-  { id: 1, link: "wayang", title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
-  { id: 2, link: "keris", title: "Keris", imgSrc: "public/keris.svg" },
-  { id: 3, link: "batik", title: "Batik", imgSrc: "public/batik.svg" },
-  { id: 4, link: "gamelan", title: "Gamelan", imgSrc: "public/gamelan.png" }
+  { id: 1, link: "./detailProduct/wayang.html", title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
+  { id: 2, link: "./detailProduct/keris.html", title: "Keris", imgSrc: "public/keris.svg" },
+  { id: 3, link: "./detailProduct/batik.html", title: "Batik", imgSrc: "public/batik.svg" },
+  { id: 4, link: "./detailProduct/gamelan.html", title: "Gamelan", imgSrc: "public/gamelan.png" }
 ];
 
 const footerData = [
@@ -222,11 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 footerData.forEach((item) => {
   console.log(item.link);
-  const card = document.createElement("a"); // Gunakan <a> sebagai elemen utama
+  const card = document.createElement("a");
   card.classList.add("flex", "flex-col", "gap-y-[6px]", "w-full", "group", "px-[90px]");
-  card.href = item.link; // Atur href langsung ke URL absolut
-  card.target = "_blank"; // Buka di tab baru (opsional)
-  card.rel = "noopener noreferrer"; // Tambahkan untuk keamanan jika membuka tab baru
+  card.href = item.link;
 
   card.innerHTML = `
   <div class="flex justify-between items-center w-full">
@@ -259,9 +257,11 @@ function updateCarousel() {
   ];
 
   visibleSlides.forEach((item) => {
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.classList.add("flex", "flex-col", "items-center", "gap-y-3", "poppins", "shadow-lg", "w-[303px]", "h-[193px]", "bg-transparent");
-    card.setAttribute("data-link", item.link);
+    card.href = item.link;
+    card.target = "_blank"; // Buka di tab baru (opsional)
+    card.rel = "noopener noreferrer";
     card.innerHTML = `
       <div class="relative w-full h-full group">
         <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full rounded-[10px] object-cover" />
@@ -274,14 +274,6 @@ function updateCarousel() {
         <div class="text-center text-white text-xl font-light mt-[12px]">${item.title}</div>
       </div>
     `;
-
-    card.addEventListener("click", () => {
-      const link = card.getAttribute("data-link");
-
-      window.location.href = `./detailProduct/${link}.html`;
-    })
-
-
     carousel.appendChild(card);
 
   });
@@ -344,7 +336,7 @@ updateVideos();
 
 const animateText = (text) => {
   const textElement = document.getElementById("scramble-text");
-  textElement.textContent = ""; // Pastikan elemen kosong sebelum memulai animasi
+  textElement.textContent = ""; 
 
   // Buat elemen span untuk setiap karakter teks
   text.split("").forEach((char) => {
