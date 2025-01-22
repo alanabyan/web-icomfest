@@ -3,19 +3,19 @@ const videos = [
     video: "public/videos/video1.mp4",
     title: "Pantai Kuta, Bali, Indonesia",
     description: "Pantai Kuta terletak di Pulau Bali, terkenal karena lautan yang bagus indah asri dan dikenal sebagai surga dunia",
-    scrambleText: "Pantai Kuta"
+    scrambleText: "PANTAI KUTA"
   },
   {
     video: "public/videos/video2.mp4",
     title: "Danau Toba, Sumatera Utara",
     description: "Salah satu danau vulkanik terbesar di dunia.",
-    scrambleText: "Danau Toba"
+    scrambleText: "DANAU TOBA"
   },
   {
     video: "public/videos/video3.mp4",
     title: "Gunung Bromo, Jawa Timur",
     description: "Salah satu pegunungan terindah di Indonesia.",
-    scrambleText: "Gunung Bromo"
+    scrambleText: "GUNUNG BROMO"
   }
 ];
 
