@@ -2,19 +2,19 @@ const videos = [
   {
     video: "public/videos/video1.mp4",
     title: "Pantai Kuta, Bali, Indonesia",
-    description: "Pantai Anyer terletak di sumatra barat, terkenal karena lautan yang bagus indah asri dan dikenal sebagai surga dunia",
+    description: "Pantai Kuta terletak di Pulau Bali, terkenal karena lautan yang bagus indah asri dan dikenal sebagai surga dunia",
     scrambleText: "Wonderful Indonesia"
   },
   {
     video: "public/videos/video2.mp4",
     title: "Danau Toba, Sumatera Utara",
     description: "Salah satu danau vulkanik terbesar di dunia.",
-    scrambleText: "A Natural Beauty"
+    scrambleText: "Wonderful Indonesia"
   },
   {
     video: "public/videos/video3.mp4",
-    title: "Candi Borobudur, Jawa Tengah",
-    description: "Salah satu keajaiban dunia yang penuh sejarah.",
+    title: "Gunung Bromo, Jawa Timur",
+    description: "Salah satu pegunungan terindah di Indonesia.",
     scrambleText: "Cultural Heritage"
   }
 ];
@@ -23,26 +23,30 @@ const destination = [...videos]
 
 const timeless = [
   {
-    video: "public/videos/video1.mp4",
+    video: "public/videos/kecak.mp4",
     title: "TARI KECAK",
-    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+    description:
+      'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.',
   },
   {
-    video: "public/videos/video1.mp4",
-    title: "TARI KECAK",
-    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+    video: "public/videos/menenun.mp4",
+    title: "MENENUN",
+    description:
+      "Weaving tradition is the process of manually creating fabric using traditional weaving tools. This activity is often an integral part of a regions culture, passed down through generations, and reflects local identity and values. The patterns and motifs of the fabric usually hold philosophical or symbolic meanings related to the communitys traditions.",
   },
   {
-    video: "public/videos/video1.mp4",
-    title: "TARI KECAK",
-    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+    video: "public/videos/batik.mp4",
+    title: "BATIK",
+    description:
+      "Batik is a traditional Indonesian art of decorating fabric using wax as a dye-resistant agent, followed by dyeing. Each batik pattern carries symbolic meanings, reflecting cultural, natural, or social values. Recognized by UNESCO in 2009, batik is made through techniques like hand-drawing (canting), stamping (cap), or a combination of both.",
   },
   {
-    video: "public/videos/video1.mp4",
-    title: "TARI KECAK",
-    description: 'Tari Kecak is a mesmerizing traditional Balinese performance that combines the power of synchronized chanting with dynamic storytelling. Originating from ancient rituals, the dance dramatizes episodes from the epic Ramayana, particularly the battle of Rama against the demon king Ravana. Unique for its absence of musical instruments, the hypnotic "cak-cak-cak" chant from dozens of performers creates an immersive and spiritual atmosphere.'
+    video: "public/videos/domba.mp4",
+    title: "ADU DOMBA",
+    description:
+      "Ram Fighting is a traditional cultural practice of the Sundanese people in West Java, Indonesia, where two rams compete in an arena, accompanied by traditional music like kendang pencak. Originally an entertainment form and a celebration of livestock, especially Garut rams, it also serves as a community event.",
   },
-]
+];
 
 const carouselData = [
   { id: 1, link: "wayang", title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
