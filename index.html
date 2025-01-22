@@ -17,7 +17,7 @@
   </head>
   <body class="bg-[#131313] relative" id="smooth-wrapper">
     <div class="scroll-content" id="smooth-content">
-      <div class="px-[26px] py-[26px]">
+      <div class="px-[26px] py-[24px]">
         <!-- Start Hero -->
         <section class="relative w-full h-screen">
           <video
@@ -83,188 +83,167 @@
         </section>
         <!-- End Hero -->
         <!-- Start Destination -->
-        <section class="pt-36 flex text-white relative">
-          <div class="flex flex-col items-start">
-            <div class="font-bold text-[3.13rem] w-[53%]">
-              <h1 class="text-white">
-                <span class="bg-[#B57442] mr-1">ANOTHER</span
-                ><span class="bg-white text-black">HEAVEN</span> IN INDONESIA
-              </h1>
-            </div>
-            <!-- Ganti video di section lainnya -->
-            <div
-              class="relative w-[31.313rem] h-[20.329rem] mt-[47px] rounded-2xl"
-            >
-              <div class="video-container relative w-full h-full">
-                <video
-                  id="main-video"
-                  class="w-full h-full object-cover rounded-2xl"
-                  controls
-                ></video>
-              </div>
-            </div>
-            <!-- <div
-              id="video-modal"
-              class="hidden absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-            >
-              <div class="relative w-full max-w-3xl h-auto p-4">
-                <button
-                  id="close-modal"
-                  class="absolute top-4 right-4 text-white rounded-full p-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
-                    />
-                  </svg>
-                </button>
-                <video
-                  id="modal-video"
-                  class="w-full rounded-2xl"
-                  autoplay
-                  loop
-                ></video>
-              </div>
-            </div> -->
-          </div>
-          <div class="flex flex-col items-start relative">
-            <div class="font-normal radio text-2xl text-white w-[70%]">
-              Tourist Destinations With The Beauty Of Heaven That Only Exists In
-              Indonesia
-              <hr class="w-[50%] border-[#B57442] stretch border-[2px] mt-6" />
-            </div>
-            <div
-              class="w-full max-w-[605px] flex flex-col justify-center mt-[89px] neue"
-            >
-              <p
-                id="video-description-carousel"
-                class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
-              ></p>
-              <div class="mt-7 flex items-center gap-x-3">
-                <hr class="w-[15%] border-[1.5px]" />
-                <p
-                  id="video-title-carousel"
-                  class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
-                ></p>
-              </div>
-            </div>
-            <div class="flex absolute bottom-0 mt-[50px] ml-5 gap-5">
-              <div
-                id="prev-btn"
-                class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-              >
-                <svg
-                  width="19"
-                  height="34"
-                  viewBox="0 0 19 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 2L2 17L17 32"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <div
-                id="next-btn"
-                class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-              >
-                <svg
-                  width="19"
-                  height="34"
-                  viewBox="0 0 19 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 32L17 17L2 2"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </section>
+<section class="pt-36 flex flex-col lg:flex-row text-white relative items-center px-4 lg:px-16">
+  <!-- Bagian Kiri -->
+  <div class="flex flex-col items-start w-full lg:w-[50%]">
+    <div class="font-bold text-3xl sm:text-[3.13rem] w-full lg:w-[80%]">
+     <h1 class="text-white flex flex-wrap gap-4">
+  <span class="bg-[#B57442] px-2 py-1">ANOTHER</span>
+  <span class="bg-white text-black px-2 py-1">HEAVEN</span>
+  <span>IN INDONESIA</span>
+</h1>
+
+    </div>
+    <!-- Video -->
+    <div class="relative w-full lg:w-[31.313rem] h-[20.329rem] mt-6 rounded-2xl">
+      <div class="video-container relative w-full h-full">
+        <video
+          id="main-video"
+          class="w-full h-full object-cover rounded-2xl"
+          controls
+        ></video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bagian Kanan -->
+  <div class="flex flex-col items-start w-full lg:w-[50%] mt-10 lg:mt-0 relative mb-24">
+    <div class="font-normal text-2xl text-white w-full lg:w-[70%]">
+      Tourist Destinations With The Beauty Of Heaven That Only Exists In
+      Indonesia
+      <hr class="w-[50%] border-[#B57442] border-[2px] mt-6" />
+    </div>
+    <div class="w-full max-w-[605px] flex flex-col justify-center mt-10">
+      <p
+        id="video-description-carousel"
+        class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
+      ></p>
+      <div class="mt-7 flex items-center gap-x-3">
+        <hr class="w-[15%] border-[1.5px]" />
+        <p
+          id="video-title-carousel"
+          class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
+        ></p>
+      </div>
+    </div>
+    <!-- Tombol Navigasi -->
+    <div class="flex absolute bottom-[-7rem]  gap-5">
+      <div
+        id="prev-btn"
+        class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
+      >
+        <svg
+          width="19"
+          height="34"
+          viewBox="0 0 19 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 2L2 17L17 32"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div
+        id="next-btn"
+        class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
+      >
+        <svg
+          width="19"
+          height="34"
+          viewBox="0 0 19 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 32L17 17L2 2"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
         <!-- End Destination -->
       </div>
-      <!-- Start Legacy -->
-      <section class="text-white relative px-[125px] w-full mt-24">
-        <div class="flex flex-col gap-y-[14px]">
-          <h1
-            class="font-bold text-[40px] max-w-[660px] w-[32%] leading-[60px] neue"
+      <section class="text-white relative px-4 sm:px-6 lg:px-[125px] w-full mt-24">
+  <div class="flex flex-col gap-y-4">
+    <!-- Judul -->
+    <h1
+      class="font-bold text-2xl sm:text-3xl lg:text-[40px] max-w-full lg:max-w-[660px] w-full lg:w-[32%] leading-8 sm:leading-10 lg:leading-[60px] neue"
+    >
+      TIMELESS BEAUTY OF LOCAL HERITAGE
+    </h1>
+    <div class="flex flex-wrap justify-between w-full items-center">
+      <!-- Subjudul -->
+      <p class="poppins font-light text-lg sm:text-xl text-[#B57442]">
+        Expressions of Local Art and Culture
+      </p>
+      <!-- Tombol Navigasi -->
+      <div class="flex items-center gap-4 sm:gap-[21px] mt-4 lg:mt-0">
+        <div
+          id="prev-btn-legacy"
+          class="w-12 sm:w-[4.063rem] h-12 sm:h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
+        >
+          <svg
+            width="14"
+            height="28"
+            viewBox="0 0 19 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            TIMELESS BEAUTY OF LOCAL HERITAGE
-          </h1>
-          <div class="flex justify-between w-full">
-            <p class="poppins font-light text-xl text-[#B57442]">
-              Expressions of Local Art and Culture
-            </p>
-            <div class="flex items-center mr-36 gap-x-[21px]">
-              <div
-                id="prev-btn-legacy"
-                class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-              >
-                <svg
-                  width="19"
-                  height="34"
-                  viewBox="0 0 19 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 2L2 17L17 32"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <div
-                id="next-btn-legacy"
-                class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-              >
-                <svg
-                  width="19"
-                  height="34"
-                  viewBox="0 0 19 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 32L17 17L2 2"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+            <path
+              d="M17 2L2 17L17 32"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
         <div
-          id="carousel"
-          class="flex mt-[23px] justify-start gap-x-[120px]"
-        ></div>
-        <div
-          id="indicator-container"
-          class="flex absolute bottom-[-7rem] left-[49%] gap-x-2"
-        ></div>
-      </section>
+          id="next-btn-legacy"
+          class="w-12 sm:w-[4.063rem] h-12 sm:h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
+        >
+          <svg
+            width="14"
+            height="28"
+            viewBox="0 0 19 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 32L17 17L2 2"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Carousel -->
+  <div
+    id="carousel"
+    class="flex mt-6 sm:mt-[23px] justify-start gap-x-6 sm:gap-x-10 lg:gap-x-[120px]"
+  ></div>
+  <!-- Indicator -->
+  <div
+    id="indicator-container"
+    class="flex absolute bottom-[-4rem] sm:bottom-[-5rem] lg:bottom-[-7rem] left-1/2 transform -translate-x-1/2 gap-2"
+  ></div>
+</section>
+
       <!-- Start Wonderful Section -->
       <section
         class="text-white flex flex-col justify-center items-center mt-[214px]"
@@ -295,33 +274,37 @@
       </section>
       <!-- Locomotion End -->
       <!-- Timeless Start -->
-      <section
-        class="text-white neue flex flex-col justify-center items-center px-[130px]"
-      >
-        <div class="text-center font-bold text-[42px] max-w-[671px] w-full">
-          <h1>TIMELESS MOVEMENTS OF THE ARCHIPELAGO</h1>
-        </div>
-        <div class="gap-8 flex flex-col mt-[69px]" id="content"></div>
-      </section>
+     <section
+  class="text-white neue flex flex-col justify-center items-center px-6 sm:px-10 lg:px-[130px] mt-12 sm:mt-24"
+>
+  <div class="text-center font-bold text-2xl sm:text-3xl lg:text-[42px] max-w-full lg:max-w-[671px] w-full">
+    <h1>TIMELESS MOVEMENTS OF THE ARCHIPELAGO</h1>
+  </div>
+  <div
+    class="gap-6 sm:gap-8 flex flex-col mt-8 sm:mt-[69px] w-full max-w-full lg:max-w-[800px]"
+    id="content"
+  ></div>
+</section>
+
       <!-- Timeless End -->
       <!-- Quotes Start -->
-      <section class="relative w-full px-6 mt-[446px] py-10">
-        <div class="bg-white rounded-[40px] p-6">
-          <div class="flex flex-col items-start justify-center">
-            <div class="flex gap-x-[24px] items-center mb-6">
-              <img
-                src="public/icons/nevtik.svg"
-                alt="Nevtik Logo"
-                class="w-[58px]"
-              />
-              <img src="public/text-box.svg" alt="" />
-            </div>
-            <div id="footer" class="flex flex-col gap-y-[16px] w-full">
-              <!-- Items will be appended here by JavaScript -->
-            </div>
-          </div>
-        </div>
-      </section>
+     <section class="relative w-full px-6 mt-[446px] py-10">
+  <div class="bg-white rounded-[40px] p-6">
+    <div class="flex flex-col items-start justify-center">
+      <div class="flex flex-col sm:flex-row gap-x-[24px] sm:gap-x-[24px] items-center mb-6">
+        <img
+          src="public/icons/nevtik.svg"
+          alt="Nevtik Logo"
+          class="sm:w-[58px] w-[48px]" />
+        <img src="public/text-box.svg" alt="" />
+      </div>
+      <div id="footer" class="flex flex-col gap-y-[16px] w-full">
+        <!-- Items will be appended here by JavaScript -->
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
     <script src="script.js"></script>
   </body>

@@ -116,23 +116,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     card.innerHTML = `
-      <div class="w-[459px] h-[284px] rounded-lg overflow-hidden">
-        <video
-          class="w-full h-full object-cover"
-          controls
-        >
-          <source src="${item.video}" type="video/mp4">
-        </video>
-      </div>
-      <div class="flex flex-col items-center gap-2">
-          <div class="w-[36px] h-[36px] bg-[#B57442] rounded-full flex justify-center items-center text-sm text-white font-bold"></div>
-          <hr class="h-[249px] w-[3px] bg-white" />
-        </div>
-      <div class="flex flex-col gap-[4px] relative -top-5">
-        <h1 class="text-xl font-bold">${item.title}</h1>
-        <hr class="w-[177px] border-[#B57442] border-[1.5px]" />
-        <p class="text-white font-normal text-base text-justify tracking-wider max-w-[453px] w-full mt-[19px]">${item.description}</p>
-      </div>
+     <div class="flex flex-col lg:flex-row items-start gap-6">
+  <!-- Video -->
+  <div class="w-full lg:w-[459px] h-[284px] rounded-lg overflow-hidden flex">
+    <video class="w-full h-full object-cover" controls>
+      <source src="${item.video}" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Vertical Line and Dot -->
+  <div class="hidden lg:flex flex-col items-center gap-2">
+    <div
+      class="w-[36px] h-[36px] bg-[#B57442] rounded-full flex justify-center items-center text-sm text-white font-bold"
+    ></div>
+    <hr class="h-[249px] w-[3px] bg-white" />
+  </div>
+
+  <!-- Text Content -->
+  <div class="flex flex-col gap-[4px] relative lg:top-[-5px] text-center lg:text-left">
+    <h1 class="text-xl font-bold">${item.title}</h1>
+    <hr class="w-[177px] border-[#B57442] border-[1.5px] mx-auto lg:mx-0" />
+    <p
+      class="text-white font-normal text-base text-justify tracking-wider max-w-full lg:max-w-[453px] w-full mt-[19px]"
+    >
+      ${item.description}
+    </p>
+  </div>
+</div>
+
     `;
 
     document.querySelector("#content").appendChild(card);
@@ -205,15 +216,16 @@ footerData.forEach((item) => {
   const card = document.createElement("div");
   card.classList.add("flex", "flex-col", "gap-y-[6px]", "w-full", "group", "px-[90px]");
   card.innerHTML = `
-    <div class="flex justify-between items-center w-full">
-      <p class="text-[#A5A5A5] font-bold text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
-      <img
-        src="${item.icon}"
-        alt="icon"
-        class="w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
-      />
-    </div>
-    <hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
+  <div class="flex justify-between items-center w-full">
+  <p class="text-[#A5A5A5] font-bold text-[28px] sm:text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
+  <img
+    src="${item.icon}"
+    alt="icon"
+    class="w-[30px] sm:w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
+  />
+</div>
+<hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
+
   `;
   footerList.appendChild(card);
 });
@@ -385,7 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top bottom",
         end: "top top",
         scrub: true,
-        markers: true
+        markers: false
       }
     }
   )
@@ -403,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "+=500 center", // Animasi dimulai saat elemen terlihat di viewport
         end: "+=500 top", // Berhenti di tengah viewport
         scrub: true,
-        markers: true,
+        markers: false,
       },
     }
   );
@@ -418,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top bottom",
         end: "top top",
         scrub: true,
-        markers: true
+        markers: false
       },
       transformOrigin: "left center",
       ease: "none"
