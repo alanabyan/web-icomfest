@@ -1,324 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/svg+xml" href="icons/nevtik.svg">
 
-    <title>the magic of indonesia</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-[#131313] relative" id="smooth-wrapper">
-    <div class="scroll-content" id="smooth-content">
-      <div class="px-[26px] py-[24px]">
-        <!-- Start Hero -->
-        <section class="relative w-full h-screen">
-          <video
-            id="video-background"
-            class="absolute top-0 left-0 w-full md:h-[95%] h-full object-cover rounded-3xl"
-            autoplay
-            loop
-            muted
-          ></video>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="icons/nevtik.svg">
 
-          <div
-            class="text-white text-[1.565rem] flex justify-center py-4 z-[70] inverted-border"
-          >
-            <span id="scramble-text"></span>
-          </div>
+  <title>the magic of indonesia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-          <!-- Description -->
-          <div
-            class="text-white z-10 flex flex-col items-center justify-center h-full bg-[#131313] bg-opacity-55 gap-y-4"
-          >
-            <div class="flex flex-col items-start gap-y-2">
-              <div class="flex items-center justify-start gap-x-3">
-                <div
-                  class="bg-white md:w-[5.439rem] sm:w-[3.439rem] w-[2.5rem] h-[0.126rem] line-animation opacity-0"
-                ></div>
-                <p
-                  class="sm:text-xl uppercase text-nowrap md:text-[1.6rem] font-bold wonderful-text opacity-0"
-                >
-                  Wonderful Indonesia
-                </p>
+<body class="bg-[#131313] relative" id="smooth-wrapper">
+  <div class="scroll-content" id="smooth-content">
+    <div class="px-[26px] py-[24px]">
+      <!-- Start Hero -->
+      <section class="relative w-full h-screen">
+        <video id="video-background" class="absolute top-0 left-0 w-full md:h-[95%] h-full object-cover rounded-3xl"
+          autoplay loop muted></video>
+
+        <div class="text-white text-[1.565rem] flex justify-center py-4 z-[70] inverted-border">
+          <span id="scramble-text"></span>
+        </div>
+
+        <!-- Description -->
+        <div
+          class="text-white z-10 flex flex-col items-center justify-center h-full bg-[#131313] bg-opacity-55 gap-y-4">
+          <div class="flex flex-col items-start gap-y-2">
+            <div class="flex items-center justify-start gap-x-3">
+              <div class="bg-white md:w-[5.439rem] sm:w-[3.439rem] w-[2.5rem] h-[0.126rem] line-animation opacity-0">
               </div>
-              <h1
-                id="video-title"
-                class="md:text-5xl uppercase neue sm:text-3xl text-2xl text-nowrap font-extralight pantai-text opacity-0"
-              ></h1>
+              <p class="sm:text-xl uppercase text-nowrap md:text-[1.6rem] font-bold wonderful-text opacity-0">
+                Wonderful Indonesia
+              </p>
+            </div>
+            <h1 id="video-title"
+              class="md:text-5xl uppercase neue sm:text-3xl text-2xl text-nowrap font-extralight pantai-text opacity-0">
+            </h1>
+          </div>
+        </div>
+
+        <div
+          class="absolute neue text-white bottom-16 left-4 px-3 py-[0.625rem] bg-opacity-20 md:h-[5.5rem] h-[3.5rem] rounded-2xl backdrop-blur-sm">
+          <h1 class="flex items-center text-base md:text-xl font-semibold gap-x-2">
+            WONDERFUL OF INDONESIA
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z" />
+            </svg>
+          </h1>
+          <p id="video-description" class="text-[0.625rem] font-normal md:w-[19.625rem] w-[15rem]"></p>
+        </div>
+      </section>
+      <!-- End Hero -->
+      <!-- Start Destination -->
+      <section class="pt-36 flex flex-col lg:flex-row text-white relative items-center px-4 lg:px-16">
+        <!-- Bagian Kiri -->
+        <div class="flex flex-col items-start w-full lg:w-[50%]">
+          <div class="font-bold text-3xl sm:text-[3.13rem] w-full lg:w-[80%]">
+            <h1 class="text-white flex flex-wrap gap-x-[1.5px]">
+              <span class="bg-[#B57442] px-2 py-1">ANOTHER</span>
+              <span class="bg-white text-black px-2 py-1">HEAVEN</span>
+              <span>IN INDONESIA</span>
+            </h1>
+
+          </div>
+          <!-- Video -->
+          <div class="relative w-full lg:w-[31.313rem] h-[20.329rem] mt-6 rounded-2xl">
+            <div class="video-container relative w-full h-full">
+              <video id="main-video" class="w-full h-full object-cover rounded-2xl" controls></video>
             </div>
           </div>
+        </div>
 
-          <div
-            class="absolute neue text-white bottom-16 left-4 px-3 py-[0.625rem] bg-opacity-20 md:h-[5.5rem] h-[3.5rem] rounded-2xl backdrop-blur-sm"
-          >
-            <h1
-              class="flex items-center text-base md:text-xl font-semibold gap-x-2"
-            >
-              WONDERFUL OF INDONESIA
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z"
-                />
+        <!-- Bagian Kanan -->
+        <div class="flex flex-col items-start w-full lg:w-[50%] mt-10 lg:mt-0 relative mb-24">
+          <div class="font-normal text-2xl text-white w-full lg:w-[70%]">
+            Tourist Destinations With The Beauty Of Heaven That Only Exists In
+            Indonesia
+            <hr class="w-[50%] border-[#B57442] border-[2px] mt-6 stretch" />
+          </div>
+          <div class="w-full max-w-[605px] flex flex-col justify-center mt-10">
+            <p id="video-description-carousel"
+              class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"></p>
+            <div class="mt-7 flex items-center gap-x-3">
+              <hr class="w-[15%] border-[1.5px]" />
+              <p id="video-title-carousel"
+                class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"></p>
+            </div>
+          </div>
+          <!-- Tombol Navigasi -->
+          <div class="flex absolute bottom-[-7rem]  gap-5">
+            <div id="prev-btn"
+              class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center">
+              <svg width="19" height="34" viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 2L2 17L17 32" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
-            </h1>
-            <p
-              id="video-description"
-              class="text-[0.625rem] font-normal md:w-[19.625rem] w-[15rem]"
-            ></p>
-          </div>
-        </section>
-        <!-- End Hero -->
-        <!-- Start Destination -->
-<section class="pt-36 flex flex-col lg:flex-row text-white relative items-center px-4 lg:px-16">
-  <!-- Bagian Kiri -->
-  <div class="flex flex-col items-start w-full lg:w-[50%]">
-    <div class="font-bold text-3xl sm:text-[3.13rem] w-full lg:w-[80%]">
-     <h1 class="text-white flex flex-wrap gap-x-[1.5px]">
-  <span class="bg-[#B57442] px-2 py-1">ANOTHER</span>
-  <span class="bg-white text-black px-2 py-1">HEAVEN</span>
-  <span>IN INDONESIA</span>
-</h1>
-
-    </div>
-    <!-- Video -->
-    <div class="relative w-full lg:w-[31.313rem] h-[20.329rem] mt-6 rounded-2xl">
-      <div class="video-container relative w-full h-full">
-        <video
-          id="main-video"
-          class="w-full h-full object-cover rounded-2xl"
-          controls
-        ></video>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bagian Kanan -->
-  <div class="flex flex-col items-start w-full lg:w-[50%] mt-10 lg:mt-0 relative mb-24">
-    <div class="font-normal text-2xl text-white w-full lg:w-[70%]">
-      Tourist Destinations With The Beauty Of Heaven That Only Exists In
-      Indonesia
-      <hr class="w-[50%] border-[#B57442] border-[2px] mt-6 stretch" />
-    </div>
-    <div class="w-full max-w-[605px] flex flex-col justify-center mt-10">
-      <p
-        id="video-description-carousel"
-        class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
-      ></p>
-      <div class="mt-7 flex items-center gap-x-3">
-        <hr class="w-[15%] border-[1.5px]" />
-        <p
-          id="video-title-carousel"
-          class="text-white text-[20px] font-extralight leading-[35px] tracking-widest text-left"
-        ></p>
-      </div>
-    </div>
-    <!-- Tombol Navigasi -->
-    <div class="flex absolute bottom-[-7rem]  gap-5">
-      <div
-        id="prev-btn"
-        class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-      >
-        <svg
-          width="19"
-          height="34"
-          viewBox="0 0 19 34"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 2L2 17L17 32"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
-      <div
-        id="next-btn"
-        class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-      >
-        <svg
-          width="19"
-          height="34"
-          viewBox="0 0 19 34"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M2 32L17 17L2 2"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <!-- End Destination -->
-      </div>
-      <section class="text-white relative px-4 sm:px-6 lg:px-[125px] w-full mt-24">
-  <div class="flex flex-col gap-y-4">
-    <!-- Judul -->
-    <h1
-      class="font-bold text-2xl sm:text-3xl lg:text-[40px] max-w-full lg:max-w-[660px] w-full lg:w-[32%] leading-8 sm:leading-10 lg:leading-[60px] neue"
-    >
-      TIMELESS BEAUTY OF LOCAL HERITAGE
-    </h1>
-    <div class="flex flex-wrap justify-between w-full items-center">
-      <!-- Subjudul -->
-      <p class="poppins font-light text-lg sm:text-xl text-[#B57442]">
-        Expressions of Local Art and Culture
-      </p>
-      <!-- Tombol Navigasi -->
-      <div class="flex items-center gap-4 sm:gap-[21px] mt-4 lg:mt-0">
-        <div
-          id="prev-btn-legacy"
-          class="w-12 sm:w-[4.063rem] h-12 sm:h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-        >
-          <svg
-            width="14"
-            height="28"
-            viewBox="0 0 19 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17 2L2 17L17 32"
-              stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div
-          id="next-btn-legacy"
-          class="w-12 sm:w-[4.063rem] h-12 sm:h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center"
-        >
-          <svg
-            width="14"
-            height="28"
-            viewBox="0 0 19 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M2 32L17 17L2 2"
-              stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Carousel -->
-  <div
-    id="carousel"
-    class="flex mt-6 sm:mt-[23px] justify-start gap-x-6 sm:gap-x-10 lg:gap-x-[120px]"
-  ></div>
-  <!-- Indicator -->
-  <div
-    id="indicator-container"
-    class="flex absolute bottom-[-4rem] sm:bottom-[-5rem] lg:bottom-[-7rem] left-1/2 transform -translate-x-1/2 gap-2"
-  ></div>
-</section>
-
-      <!-- Start Wonderful Section -->
-     <section class="text-white flex flex-col justify-center items-center mt-[214px] px-6 sm:px-12">
-  <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl neue text-center">
-    THE WONDERFUL OF INDONESIA
-  </h1>
-  <video
-    src="public/videos/wonderful.mp4"
-    class="max-w-full w-full object-cover rounded-[30px] my-[60px] sm:max-w-[1022px]"
-    autoplay
-    loop
-    muted
-  ></video>
-</section>
-
-      <!-- Locomotion Start -->
-      <section class="mt-[751px] relative h-screen">
-        <div class="flex flex-col font-bold text-[90px]">
-          <div
-            class="bg-white w-[110%] absolute -left-6 h-[138.62px] wonderful-locomotion rotate-[8.38deg] radio flex justify-center items-center overflow-hidden text-nowrap"
-          >
-            NUSANTARA NUSANTARA NUSANTARA
-          </div>
-          <div
-            class="bg-white w-[110%] h-[138.62px] rotate-[-25deg] nusantara-locomotion overflow-hidden radio flex justify-center items-center font-bold text-[90px] radio text-nowrap"
-          >
-            WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA
+            </div>
+            <div id="next-btn"
+              class="w-[4.063rem] h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center">
+              <svg width="19" height="34" viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 32L17 17L2 2" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
-      <!-- Locomotion End -->
-      <!-- Timeless Start -->
-     <section
-  class="text-white neue flex flex-col justify-center items-center px-6 sm:px-10 lg:px-[130px] mt-12 sm:mt-24"
->
-  <div class="text-center font-bold text-2xl sm:text-3xl lg:text-[42px] max-w-full lg:max-w-[671px] w-full">
-    <h1>TIMELESS MOVEMENTS OF THE ARCHIPELAGO</h1>
-  </div>
-  <div
-    class="gap-6 sm:gap-6 flex flex-col mt-8 sm:mt-[69px] w-full max-w-full lg:max-w-[800px]"
-    id="content"
-  ></div>
-    <div class="max-w-3xl mx-auto text-center ">
-    <blockquote class="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-100">
-      "Melestarikan budaya adalah tanggung jawab kita bersama untuk menjaga warisan dan identitas bangsa agar tetap hidup dan berkembang."
-    </blockquote>
-    <p class="mt-4 text-lg sm:text-xl text-gray-600">
-      - Nevtik Team
-    </p>
-  </div>
-</section>
 
-
-
-      <!-- Timeless End -->
-      <!-- Quotes Start -->
-     <section class="relative w-full px-6 mt-[446px] py-10">
-  <div class="bg-white rounded-[40px] p-6">
-    <div class="flex flex-col items-start justify-center">
-      <div class="flex flex-col sm:flex-row gap-x-[24px] sm:gap-x-[24px] items-center mb-6">
-        <img
-          src="public/icons/nevtik.svg"
-          alt="Nevtik Logo"
-          class="sm:w-[58px] w-[48px]" />
-        <img src="public/text-box.svg" alt="" />
-      </div>
-      <div id="footer" class="flex flex-col gap-y-[16px] w-full">
-        <!-- Items will be appended here by JavaScript -->
-      </div>
+      <!-- End Destination -->
     </div>
-  </div>
-</section>
+    <section class="text-white relative px-4 sm:px-6 lg:px-[125px] w-full mt-24">
+      <div class="flex flex-col gap-y-4">
+        <!-- Judul -->
+        <h1
+          class="font-bold text-2xl sm:text-3xl lg:text-[40px] max-w-full lg:max-w-[660px] w-full lg:w-[32%] leading-8 sm:leading-10 lg:leading-[60px] neue">
+          TIMELESS BEAUTY OF LOCAL HERITAGE
+        </h1>
+        <div class="flex flex-wrap justify-between w-full items-center">
+          <!-- Subjudul -->
+          <p class="poppins font-light text-lg sm:text-xl text-[#B57442]">
+            Expressions of Local Art and Culture
+          </p>
+          <!-- Tombol Navigasi -->
+          <div class="flex items-center gap-4 sm:gap-[21px] mt-4 lg:mt-0">
+            <div id="prev-btn-legacy"
+              class="w-12 sm:w-[4.063rem] h-12 sm:h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center">
+              <svg width="14" height="28" viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 2L2 17L17 32" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div id="next-btn-legacy"
+              class="w-12 sm:w-[4.063rem] h-12 sm:h-[4.063rem] cursor-pointer rounded-full border-[3px] border-white flex items-center justify-center">
+              <svg width="14" height="28" viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 32L17 17L2 2" stroke="white" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel -->
+      <div id="carousel" class="flex mt-6 sm:mt-[23px] justify-start gap-x-6 sm:gap-x-10 lg:gap-x-[120px]"></div>
+      <!-- Indicator -->
+      <div id="indicator-container"
+        class="flex absolute bottom-[-4rem] sm:bottom-[-5rem] lg:bottom-[-7rem] left-1/2 transform -translate-x-1/2 gap-2">
+      </div>
+    </section>
 
-    </div>
-    <script src="script.js"></script>
-  </body>
+    <!-- Start Wonderful Section -->
+    <section class="text-white flex flex-col justify-center items-center mt-[214px] px-6 sm:px-12">
+      <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl neue text-center">
+        THE WONDERFUL OF INDONESIA
+      </h1>
+      <video src="public/videos/wonderful.mp4"
+        class="max-w-full w-full object-cover rounded-[30px] my-[60px] sm:max-w-[1022px]" autoplay loop muted></video>
+    </section>
+
+    <!-- Locomotion Start -->
+    <section class="mt-[751px] relative h-screen">
+      <div class="flex flex-col font-bold text-[90px]">
+        <div
+          class="bg-white w-[110%] absolute -left-6 h-[138.62px] wonderful-locomotion rotate-[8.38deg] radio flex justify-center items-center overflow-hidden text-nowrap">
+          NUSANTARA NUSANTARA NUSANTARA
+        </div>
+        <div
+          class="bg-white w-[110%] h-[138.62px] rotate-[-25deg] nusantara-locomotion overflow-hidden radio flex justify-center items-center font-bold text-[90px] radio text-nowrap">
+          WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA WONDERFUL OF INDONESIA
+        </div>
+      </div>
+    </section>
+    <!-- Locomotion End -->
+    <!-- Timeless Start -->
+    <section
+      class="text-white neue flex flex-col justify-center items-center px-6 sm:px-10 lg:px-[130px] mt-12 sm:mt-24">
+      <div class="text-center font-bold text-2xl sm:text-3xl lg:text-[42px] max-w-full lg:max-w-[671px] w-full">
+        <h1>TIMELESS MOVEMENTS OF THE ARCHIPELAGO</h1>
+      </div>
+      <div class="gap-6 sm:gap-6 flex flex-col mt-8 sm:mt-[69px] w-full max-w-full lg:max-w-[800px]" id="content"></div>
+      <div class="max-w-3xl mx-auto text-center ">
+        <blockquote class="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-100">
+          "Melestarikan budaya adalah tanggung jawab kita bersama untuk menjaga warisan dan identitas bangsa agar tetap
+          hidup dan berkembang."
+        </blockquote>
+        <p class="mt-4 text-lg sm:text-xl text-gray-600">
+          - Nevtik Team
+        </p>
+      </div>
+    </section>
+
+
+
+    <!-- Timeless End -->
+    <!-- Quotes Start -->
+    <section class="relative w-full px-6 mt-[446px] py-10">
+      <div class="bg-white rounded-[40px] p-6">
+        <div class="flex flex-col items-start justify-center">
+          <div class="flex flex-col sm:flex-row gap-x-[24px] sm:gap-x-[24px] items-center mb-6">
+            <img src="public/icons/nevtik.svg" alt="Nevtik Logo" class="sm:w-[58px] w-[48px]" />
+            <img src="public/text-box.svg" alt="" />
+          </div>
+          <div id="footer" class="flex flex-col gap-y-[16px] w-full">
+            <!-- Items will be appended here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
