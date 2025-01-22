@@ -278,7 +278,7 @@ function updateCarousel() {
     card.addEventListener("click", () => {
       const link = card.getAttribute("data-link");
 
-      window.location.href = `/detailProduct/${link}.html`;
+      window.location.href = `./detailProduct/${link}.html`;
     })
 
 

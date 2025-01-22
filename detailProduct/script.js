@@ -73,15 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div class="flex flex-col">
     <h1 class="text-[#B57442] poppins font-bold text-4xl">${item.title}</h1>
     <p class="font-normal text-xl neue text-white text-justify">
-        Kuta Beach is one of Bali’s most iconic tourist destinations,
-        renowned for its soft white sand, perfect waves for surfing, and
-        stunning sunsets. Located just minutes from Ngurah Rai Airport, Kuta
-        is a haven for travelers seeking a complete tropical experience.
-        Pantai Kuta, Bali, Indonesia Kuta Beach is one of Bali’s most iconic
-        tourist destinations, renowned for its soft white sand, perfect
-        waves for surfing, and stunning sunsets. Located just minutes from
-        Ngurah Rai Airport, Kuta is a haven for travelers seeking a complete
-        tropical experience.
+       ${item.description}
     </p>
 </div>
 `;
