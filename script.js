@@ -260,8 +260,6 @@ function updateCarousel() {
     const card = document.createElement("a");
     card.classList.add("flex", "flex-col", "items-center", "gap-y-3", "poppins", "shadow-lg", "w-[303px]", "h-[193px]", "bg-transparent");
     card.href = item.link;
-    card.target = "_blank"; // Buka di tab baru (opsional)
-    card.rel = "noopener noreferrer";
     card.innerHTML = `
       <div class="relative w-full h-full group">
         <img src="${item.imgSrc}" alt="${item.title}" class="w-full h-full rounded-[10px] object-cover" />
