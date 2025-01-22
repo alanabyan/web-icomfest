@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wayang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .sticky-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body class="bg-black w-full h-screen py-10 px-12 overflow-x-hidden">
+    <!-- Back Button -->
+    <button class="mb-8" onclick="handleClick()">
+        <img src="../public/icons/button-back.svg" alt="Back" class="w-12" />
+    </button>
+
+    <div class="grid grid-cols-2 mt-[87px]">
+        <!-- Sticky Image -->
+        <div class="sticky-container">
+            <div class="relative">
+                <img src="../public/images/megamendung.svg" alt="" />
+                <div class="absolute inset-0 bg-black bg-opacity-15"></div>
+                <h1 class="absolute text-white bottom-5 poppins font-bold text-4xl left-5">
+                    GAMELAN
+                </h1>
+            </div>
+        </div>
+        <div id="content" class="flex flex-col"></div>
+
+        <!-- Scrollable Content -->
+    </div>
+
+    <section class="relative w-full px-6 mt-[106px] py-10">
+        <div class="bg-white rounded-[40px] p-6">
+            <div class="flex flex-col items-start justify-center">
+                <div class="flex gap-x-[24px] items-center mb-6">
+                    <img src="../public/icons/nevtik.svg" alt="Nevtik Logo" class="w-[58px]" />
+                    <img src="../public/text-box.svg" alt="" />
+                </div>
+                <div id="footer" class="flex flex-col gap-y-[16px] w-full">
+                    <!-- Items will be appended here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

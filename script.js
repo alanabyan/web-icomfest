@@ -46,27 +46,31 @@ const timeless = [
 
 const carouselData = [
   { id: 1, link: "wayang", title: "Wayang Kulit", imgSrc: "public/wayang.svg" },
-  { id: 2, link: "wayang", title: "Keris", imgSrc: "public/keris.svg" },
-  { id: 3, link: "wayang", title: "Batik", imgSrc: "public/batik.svg" },
-  { id: 4, link: "wayang", title: "Gamelan", imgSrc: "public/gamelan.png" }
+  { id: 2, link: "keris", title: "Keris", imgSrc: "public/keris.svg" },
+  { id: 3, link: "batik", title: "Batik", imgSrc: "public/batik.svg" },
+  { id: 4, link: "gamelan", title: "Gamelan", imgSrc: "public/gamelan.png" }
 ];
 
 const footerData = [
   {
     title: "OUR TEAMS",
-    icon: "public/icons/top-right-arrow-footer.svg"
+    icon: "public/icons/top-right-arrow-footer.svg",
+    link: "https://nevtik.org"
   },
   {
     title: "INSTAGRAM",
-    icon: "public/icons/top-right-arrow-footer.svg"
+    icon: "public/icons/top-right-arrow-footer.svg",
+    link: "https://www.instagram.com/nevtikacademy/"
   },
   {
     title: "LINKEDIN",
-    icon: "public/icons/top-right-arrow-footer.svg"
+    icon: "public/icons/top-right-arrow-footer.svg",
+    link: "https://www.linkedin.com/company/nevtik/"
   },
   {
     title: "YOUTUBE",
-    icon: "public/icons/top-right-arrow-footer.svg"
+    icon: "public/icons/top-right-arrow-footer.svg",
+    link: "https://www.youtube.com/c/NEVTIKAcademy",
   },
 ]
 
@@ -213,22 +217,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 footerData.forEach((item) => {
-  const card = document.createElement("div");
+  console.log(item.link);
+  const card = document.createElement("a"); // Gunakan <a> sebagai elemen utama
   card.classList.add("flex", "flex-col", "gap-y-[6px]", "w-full", "group", "px-[90px]");
+  card.href = item.link; // Atur href langsung ke URL absolut
+  card.target = "_blank"; // Buka di tab baru (opsional)
+  card.rel = "noopener noreferrer"; // Tambahkan untuk keamanan jika membuka tab baru
+
   card.innerHTML = `
   <div class="flex justify-between items-center w-full">
-  <p class="text-[#A5A5A5] font-bold text-[28px] sm:text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
-  <img
-    src="${item.icon}"
-    alt="icon"
-    class="w-[30px] sm:w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
-  />
-</div>
-<hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
-
+    <p class="text-[#A5A5A5] font-bold text-[28px] sm:text-[35px] radio group-hover:text-black transition-colors duration-300">${item.title}</p>
+    <img
+      src="${item.icon}"
+      alt="icon"
+      class="w-[30px] sm:w-[40px] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[345deg] transition-all duration-300"
+    />
+  </div>
+  <hr class="bg-[#A5A5A5] group-hover:bg-black h-[2px] w-full transition-colors duration-300" />
   `;
+
   footerList.appendChild(card);
 });
+
 
 
 // Ambil elemen "timeless" sebagai array data
